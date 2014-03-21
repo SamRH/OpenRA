@@ -35,8 +35,7 @@ namespace OpenRA.Mods.RA.Effects
 
 		public void Tick(World world)
 		{
-			if (!building.IsInWorld || building.IsDead() ||
-				rb.Repairer == null || rb.Repairer != player)
+			if (!building.IsInWorld || building.IsDead() || !rb.isPlayerRepairing(player))
 				world.AddFrameEndTask(w => w.Remove(this));
 
 			anim.Tick();
