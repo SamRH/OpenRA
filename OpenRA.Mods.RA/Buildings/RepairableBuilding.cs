@@ -78,21 +78,19 @@ namespace OpenRA.Mods.RA.Buildings
 
 			if (remainingTicks == 0)
 			{
-				foreach (var p in Repairers)
-					if (p.WinState != WinState.Undefined || p.Stances[self.Owner] != Stance.Ally) Repairers.Remove(p);
-
 				var buildingValue = self.GetSellValue();
 
 				var hpToRepair = Math.Min(Info.RepairStep, Health.MaxHP - Health.HP);
 				var cost = Math.Max(1, (hpToRepair * Info.RepairPercent  * buildingValue) / (Health.MaxHP * 100));
 				// if any players can't afford the cost then they are done repairing
-				foreach (var p in Repairers)
+				foreach (var p in Repairers.ToList())
 				{
-					if (!p.PlayerActor.Trait<PlayerResources>().TakeCash(cost))
+					if (p.WinState != WinState.Undefined ||
+					    p.Stances[self.Owner] != Stance.Ally ||
+					    !p.PlayerActor.Trait<PlayerResources>().TakeCash(cost))
 					{
 						Repairers.Remove(p);
 
-						// if no players can afford the cost
 						if (Repairers.Count < 1)
 						{
 							remainingTicks = 1;
