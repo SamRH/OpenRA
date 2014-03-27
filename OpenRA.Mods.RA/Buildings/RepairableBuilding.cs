@@ -32,7 +32,7 @@ namespace OpenRA.Mods.RA.Buildings
 
 	public class RepairableBuilding : ITick, ISync
 	{
-		private List<Player> Repairers;
+		[Sync] List<Player> Repairers;
 
 		Health Health;
 		RepairableBuildingInfo Info;

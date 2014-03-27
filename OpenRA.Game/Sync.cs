@@ -45,6 +45,7 @@ namespace OpenRA
 			{typeof(Actor), ((Func<Actor, int>)hash_actor).Method},
 			{typeof(Player), ((Func<Player, int>)hash_player).Method},
 			{typeof(Target), ((Func<Target, int>)hash_target).Method},
+			{typeof(List<Player>), ((Func<List<Player>, int>)hash_playerlist).Method},
 		};
 
 		static void EmitSyncOpcodes(Type type, ILGenerator il)
@@ -133,6 +134,17 @@ namespace OpenRA
 		{
 			if (p != null)
 				return (int)(p.PlayerActor.ActorID << 16) * 0x567;
+			return 0;
+		}
+
+		public static int hash_playerlist(List<Player> l)
+		{
+			int ret = 0;
+			if (l != null) {
+				foreach (var p in l)
+					ret += 	(int)(p.PlayerActor.ActorID << 16) * 0x567;
+				return ret;
+			}
 			return 0;
 		}
 
