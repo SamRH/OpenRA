@@ -10,13 +10,13 @@ Folders:
 	./mods/ts
 	./mods/ts/bits
 	./mods/ts/uibits
-	~^/Content/ts
+	~^Content/ts
 # Red Alert
 	./mods/ra/uibits
 
 MapFolders:
 	./mods/ts/maps
-	~^/maps/ts
+	~^maps/ts
 
 Packages:
 # Tiberian Sun
@@ -108,6 +108,7 @@ ChromeLayout:
 	mods/ra/chrome/settings.yaml
 	mods/ra/chrome/credits.yaml
 	mods/ra/chrome/lobby.yaml
+	mods/ra/chrome/lobby-mappreview.yaml
 	mods/ra/chrome/lobby-playerbin.yaml
 	mods/ra/chrome/lobby-dialogs.yaml
 	mods/ts/chrome/color-picker.yaml

@@ -10,11 +10,11 @@ Folders:
 	./mods/ra/bits
 	./mods/ra/bits/desert
 	./mods/ra/uibits
-	~^/Content/ra
+	~^Content/ra
 
 MapFolders:
 	./mods/ra/maps
-	~^/maps/ra
+	~^maps/ra
 
 Packages:
 	~main.mix
@@ -83,6 +83,7 @@ ChromeLayout:
 	mods/ra/chrome/settings.yaml
 	mods/ra/chrome/credits.yaml
 	mods/ra/chrome/lobby.yaml
+	mods/ra/chrome/lobby-mappreview.yaml
 	mods/ra/chrome/lobby-playerbin.yaml
 	mods/ra/chrome/lobby-dialogs.yaml
 	mods/ra/chrome/color-picker.yaml

@@ -136,7 +136,7 @@ namespace OpenRA.GameRules
 		public bool TeamHealthColors = false;
 
 		public bool AllowDownloading = true;
-		public string[] MapRepositories = { "http://resource.openra.net/map/", "http://resource.ihptru.net:8080/map/" };
+		public string MapRepository = "http://resource.openra.net/map/";
 	}
 
 	public class KeySettings
@@ -147,9 +147,8 @@ namespace OpenRA.GameRules
 		public Hotkey SelectAllUnitsKey = new Hotkey(Keycode.A, Modifiers.Ctrl);
 		public Hotkey SelectUnitsByTypeKey = new Hotkey(Keycode.T, Modifiers.Ctrl);
 
-		public Hotkey PlaceBeaconKey = new Hotkey(Keycode.B, Modifiers.Ctrl);
-
-		public Hotkey PauseKey = new Hotkey(Keycode.F9, Modifiers.None);
+		public Hotkey PauseKey = new Hotkey(Keycode.F8, Modifiers.None);
+		public Hotkey PlaceBeaconKey = new Hotkey(Keycode.F9, Modifiers.None);
 		public Hotkey SellKey = new Hotkey(Keycode.F10, Modifiers.None);
 		public Hotkey PowerDownKey = new Hotkey(Keycode.F11, Modifiers.None);
 		public Hotkey RepairKey = new Hotkey(Keycode.F12, Modifiers.None);
@@ -166,6 +165,9 @@ namespace OpenRA.GameRules
 		public Hotkey DeployKey = new Hotkey(Keycode.F, Modifiers.None);
 		public Hotkey StanceCycleKey = new Hotkey(Keycode.Z, Modifiers.None);
 		public Hotkey GuardKey = new Hotkey(Keycode.D, Modifiers.None);
+
+		public Hotkey ObserverCombinedView = new Hotkey(Keycode.MINUS, Modifiers.None);
+		public Hotkey ObserverWorldView = new Hotkey(Keycode.EQUALS, Modifiers.None);
 	}
 
 	public class IrcSettings

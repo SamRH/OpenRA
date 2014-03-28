@@ -1,6 +1,7 @@
 NEW:
 	All Mods:
-		Added the ability to place map beacons for highlighting areas to teammates.
+		Added the ability to place map beacons for highlighting areas to teammates (Hotkey: F9).
+		The default pause hotkey has changed to F8.
 		Structures under attack and friendly superweapon launch targets will now be highlighted on the radar.
 		Fixed unloading passengers moving unnecessarily far from their transport.
 		Fixed the unload cursor sometimes being displayed for transports even when they were unable to unload.
@@ -23,10 +24,14 @@ NEW:
 		Order lines are now shown on unit selection.
 		Fixed chat synchronization in replays.
 		Added a combined shroud view of every player to the replay viewer and spectator mode.
-		Added pause, slowdown, play and fastforward buttons for replays.
+		Improved the observer/replay view selector with teams, factions, player colors, and hotkeys.
+		Added playback speed controls to replays.
 		Fixed the game sometimes crashing when deploying and activating the guard cursor at the same time.
 		Build time is now set when an item reaches the front of a queue, instead of immediately when queued.
 		The attack cursor now changes if the target is out of range.
+		The server browser will now show map details from other mods if the maps are available online.
+		Fixed a crash when connecting to a server with an unavailable map.
+		Added a warning dialog when force starting a match.
 	Dune 2000:
 		Added the Atreides grenadier from the 1.06 patch.
 		Added randomized tiles for Sand and Rock terrain.
@@ -45,7 +50,10 @@ NEW:
 		Increased torpedo splash damage and raised multiplier vs. concrete.
 		Fixed transparency glitches in the sniper icon.
 		Removed health bars and selection boxes from walls.
-		Flak Truck has been renamed to Mobile Flak.
+		Renamed Flak Truck to Mobile Flak.
+		Increased the shroud reveal range of Mobile Flak from 4 to 6.
+		Increased the turret rotation speed of Mobile Flak from 5 to 10.
+		Increased the hitpoints of Mobile Flak from 120 to 150.
 		Fixed Tanya being unavailable after using the Chronosphere on a vehicle she is in.
 		Tanya can now plant C4 on vehicles.
 		Parachute bomb air strike will reveal the whole target area.
@@ -70,6 +78,8 @@ NEW:
 		Added the submarine detection ability to Submarines and Missile Subs.
 		Increased the submarine detection range of Gunboat from 3 to 4.
 		Fixed Spies having an enemy color health bar when disguised as a friendly unit (occurred using the Team Health Colors setting).
+		Chrono Tanks can now be teleported in groups by holding SHIFT or ALT and issuing a move order.
+		Added Minibibs for bibless buildings.
 	Tiberian Dawn:
 		Chinook rotors now counter-rotate.
 		Commando can now plant C4 on bridges.
@@ -98,6 +108,7 @@ NEW:
 		Increased Obelisk of Light laser damage from 200 to 360.
 		Fixed Obelisk of Light charge animation and sound not playing.
 		Replaced or improved several mouse cursors.
+		Added Minibibs for bibless buildings.
 	Engine:
 		Converted Aircraft CruiseAltitude to world coordinates.
 		Converted Health Radius to world coordinates.
@@ -122,6 +133,11 @@ NEW:
 		Added IEffectiveOwner interface for traits/logic that temporarily alter an actor's apparent owner.
 		Renamed Spy trait to Disguise, SpyToolTip trait to DisguiseToolTip, and RenderSpy trait to RenderDisguise.
 		Overhauled the internal map management and preview generation code.
+		Muzzleflash definitions have moved from WithMuzzleFlash to each Armament. Only one WithMuzzleFlash is now required per actor.
+		Added an AttackGarrisoned trait that allows passengers to fire through a set of defined ports.
+		Maps can define initial cargo for actors by adding "Cargo: actora, actorb, ..." to the actor reference.
+		Modified Teleport activity to use the best/closest open cell to the target destination for teleports (for ChronoshiftPower this only applies on the return trip).
+		Renamed ChronoshiftDeploy trait to PortableChrono.
 	Server:
 		Message of the day is now shared between all mods and a default motd.txt gets created in the user directory.
 	Asset Browser:

@@ -158,9 +158,26 @@ Container@OBSERVER_WIDGETS:
 			Width:168
 			Height:25
 			Font:Bold
+			Children:
+				LogicKeyListener@SHROUD_KEYHANDLER:
+				Image@FLAG:
+					X:4
+					Y:4
+					Width:32
+					Height:16
+				Label@LABEL:
+					X:40
+					Width:60
+					Height:25
+				Label@NOFLAG_LABEL:
+					X:5
+					Width:PARENT_RIGHT
+					Height:25
 
 Container@PLAYER_WIDGETS:
 	Children:
+		LogicKeyListener@CONTROLGROUP_KEYHANDLER:
+			Logic:ControlGroupLogic
 		LogicTicker@SIDEBAR_TICKER:
 		WorldCommand:
 			Width:WINDOW_RIGHT
@@ -172,6 +189,7 @@ Container@PLAYER_WIDGETS:
 			ReadyText:Ready
 			HoldText:On Hold
 		Background@SIDEBAR_BACKGROUND:
+			Logic:OrderButtonsChromeLogic
 			X:WINDOW_RIGHT - 204
 			Y:30
 			Width:194
@@ -180,7 +198,7 @@ Container@PLAYER_WIDGETS:
 			Children:
 				Button@OPTIONS_BUTTON:
 					Key:escape
-					X:42
+					X:22
 					Y:0-24
 					Width:30
 					Height:25
@@ -193,8 +211,21 @@ Container@PLAYER_WIDGETS:
 							Y:5
 							ImageCollection:order-icons
 							ImageName:options
+				Button@BEACON_BUTTON:
+					X:62
+					Y:0-24
+					Width:30
+					Height:25
+					Font:Bold
+					TooltipText: Place Beacon
+					TooltipContainer:TOOLTIP_CONTAINER
+					Children:
+						Image@ICON:
+							X:7
+							Y:5
+							ImageCollection:order-icons
 				Button@SELL_BUTTON:
-					X:82
+					X:102
 					Y:0-24
 					Width:30
 					Height:25
@@ -207,7 +238,7 @@ Container@PLAYER_WIDGETS:
 							Y:5
 							ImageCollection:order-icons
 				Button@REPAIR_BUTTON:
-					X:122
+					X:142
 					Y:0-24
 					Width:30
 					Height:25

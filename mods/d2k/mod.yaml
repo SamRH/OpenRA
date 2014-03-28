@@ -12,13 +12,13 @@ Folders:
 	./mods/d2k/bits/xmas
 	./mods/d2k/uibits
 	./mods/ra/uibits
-	~^/Content/d2k
-	~^/Content/d2k/GAMESFX
-	~^/Content/d2k/Music
+	~^Content/d2k
+	~^Content/d2k/GAMESFX
+	~^Content/d2k/Music
 
 MapFolders:
 	./mods/d2k/maps
-	~^/maps/d2k
+	~^maps/d2k
 
 Packages:
 	SOUND.RS
@@ -62,13 +62,14 @@ ChromeLayout:
 	mods/ra/chrome/ingame-diplomacy.yaml
 	mods/ra/chrome/ingame-fmvplayer.yaml
 	mods/ra/chrome/ingame-menu.yaml
-	mods/ra/chrome/ingame-observer.yaml
+	mods/d2k/chrome/ingame-observer.yaml
 	mods/ra/chrome/ingame-observerstats.yaml
 	mods/d2k/chrome/ingame-player.yaml
 	mods/d2k/chrome/mainmenu.yaml
 	mods/ra/chrome/settings.yaml
 	mods/ra/chrome/credits.yaml
 	mods/ra/chrome/lobby.yaml
+	mods/ra/chrome/lobby-mappreview.yaml
 	mods/d2k/chrome/lobby-playerbin.yaml
 	mods/ra/chrome/lobby-dialogs.yaml
 	mods/d2k/chrome/color-picker.yaml
@@ -78,7 +79,7 @@ ChromeLayout:
 	mods/ra/chrome/connection.yaml
 	mods/ra/chrome/directconnect.yaml
 	mods/ra/chrome/replaybrowser.yaml
-	mods/ra/chrome/dropdowns.yaml
+	mods/d2k/chrome/dropdowns.yaml
 	mods/ra/chrome/modchooser.yaml
 	mods/ra/chrome/cheats.yaml
 	mods/ra/chrome/musicplayer.yaml

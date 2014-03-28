@@ -65,7 +65,8 @@ namespace OpenRA.Mods.RA.Buildings
 				return false;
 
 			var buildingMaxBounds = (CVec)Dimensions;
-			if (Rules.Info[buildingName].Traits.Contains<BibInfo>())
+			var buildingTraits = Rules.Info[buildingName].Traits;
+			if (buildingTraits.Contains<BibInfo>() && !(buildingTraits.Get<BibInfo>().HasMinibib))
 				buildingMaxBounds += new CVec(0, 1);
 
 			var scanStart = world.ClampToWorld(topLeft - new CVec(Adjacent, Adjacent));
@@ -98,19 +99,23 @@ namespace OpenRA.Mods.RA.Buildings
 		}
 	}
 
-	public class Building : INotifyDamage, IOccupySpace, INotifyCapture, ISync, ITechTreePrerequisite, INotifyAddedToWorld, INotifyRemovedFromWorld
+	public class Building : INotifyDamage, IOccupySpace, INotifyCapture, INotifyBuildComplete, INotifySold, ISync, ITechTreePrerequisite, INotifyAddedToWorld, INotifyRemovedFromWorld
 	{
-		readonly Actor self;
 		public readonly BuildingInfo Info;
+		public bool BuildComplete { get; private set; }
 		[Sync] readonly CPos topLeft;
+		readonly Actor self;
 
 		PowerManager PlayerPower;
 
-		[Sync] public bool Locked;	/* shared activity lock: undeploy, sell, capture, etc */
+		/* shared activity lock: undeploy, sell, capture, etc */
+		[Sync] public bool Locked = true;
 
 		public bool Lock()
 		{
-			if (Locked) return false;
+			if (Locked)
+				return false;
+
 			Locked = true;
 			return true;
 		}
@@ -133,6 +138,7 @@ namespace OpenRA.Mods.RA.Buildings
 				.Select(c => Pair.New(c, SubCell.FullCell)).ToArray();
 
 			CenterPosition = topLeft.CenterPosition + FootprintUtils.CenterOffset(Info);
+			BuildComplete = init.Contains<SkipMakeAnimsInit>();
 		}
 
 		public int GetPowerUsage()
@@ -172,5 +178,14 @@ namespace OpenRA.Mods.RA.Buildings
 			self.World.ActorMap.RemovePosition(self, this);
 			self.World.ScreenMap.Remove(self);
 		}
+
+		public void BuildingComplete(Actor self)
+		{
+			BuildComplete = true;
+			Locked = false;
+		}
+
+		public void Selling(Actor self) { BuildComplete = false; }
+		public void Sold(Actor self) { }
 	}
 }

@@ -190,7 +190,6 @@
     <Compile Include="ExternalCaptures.cs" />
     <Compile Include="Cargo.cs" />
     <Compile Include="CashTrickler.cs" />
-    <Compile Include="ChronoshiftDeploy.cs" />
     <Compile Include="ChronoshiftPaletteEffect.cs" />
     <Compile Include="Chronoshiftable.cs" />
     <Compile Include="Cloak.cs" />
@@ -293,6 +292,7 @@
     <Compile Include="Player\ClassicProductionQueue.cs" />
     <Compile Include="Player\PlaceBuilding.cs" />
     <Compile Include="Player\ProductionQueue.cs" />
+    <Compile Include="PortableChrono.cs" />
     <Compile Include="World\RadarPings.cs" />
     <Compile Include="Player\TechTree.cs" />
     <Compile Include="PlayerExts.cs" />
@@ -406,7 +406,6 @@
     <Compile Include="Widgets\MoneyBinWidget.cs" />
     <Compile Include="Widgets\ObserverProductionIconsWidget.cs" />
     <Compile Include="Widgets\ObserverSupportPowerIconsWidget.cs" />
-    <Compile Include="Widgets\OrderButtonWidget.cs" />
     <Compile Include="Widgets\RadarWidget.cs" />
     <Compile Include="Widgets\StrategicProgressWidget.cs" />
     <Compile Include="Widgets\SupportPowerTimerWidget.cs" />
@@ -454,7 +453,6 @@
     <Compile Include="Widgets\Logic\SimpleTooltipLogic.cs" />
     <Compile Include="World\DomainIndex.cs" />
     <Compile Include="MPStartUnits.cs" />
-    <Compile Include="Orders\SetChronoTankDestination.cs" />
     <Compile Include="Widgets\Logic\WorldTooltipLogic.cs" />
     <Compile Include="TeslaZapRenderable.cs" />
     <Compile Include="Buildings\Bib.cs" />
@@ -485,6 +483,13 @@
     <Compile Include="World\BuildableTerrainLayer.cs" />
     <Compile Include="Buildings\LaysTerrain.cs" />
     <Compile Include="RemoveImmediately.cs" />
+    <Compile Include="Attack\AttackFollow.cs" />
+    <Compile Include="Attack\AttackGarrisoned.cs" />
+    <Compile Include="Widgets\Logic\LobbyMapPreviewLogic.cs" />
+    <Compile Include="Widgets\Logic\ButtonTooltipLogic.cs" />
+    <Compile Include="Orders\BeaconOrderGenerator.cs" />
+    <Compile Include="Widgets\LogicKeyListenerWidget.cs" />
+    <Compile Include="Widgets\Logic\ControlGroupLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpenRA.FileFormats\OpenRA.FileFormats.csproj">
