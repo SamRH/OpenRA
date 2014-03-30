@@ -24,7 +24,7 @@ namespace OpenRA.Mods.RA.Buildings
 		public readonly int RepairInterval = 24;
 		public readonly int RepairStep = 7;
 		public readonly int MaxPlayerRepair = 3;
-		public readonly int ExtraRepairPercent = 10;
+		public readonly int ExtraRepairPercent = 20;
 		public readonly string IndicatorPalettePrefix = "player";
 
 		public object Create(ActorInitializer init) { return new RepairableBuilding(init.self, this); }
